@@ -7,6 +7,7 @@
 
 
 # Workshop 1
+
 ## Hello World
 
 One of the first programs you usually write, when learning how to program is 'Hello World'.
@@ -18,10 +19,19 @@ XXX: TODO ALL THE THINGS
 ```python
 from mcpi.minecraft import Minecraft
 
+# <-- This is a comment.
+# In python, lines of code starting with a '#' aren't run, but can give other coders
+# useful information about how your program works.
+
+# Connect to our Minecraft world.
 mc = Minecraft.create()
 
+# Send a chat command to Minecraft.
 mc.postToChat("Hello World!")
 ```
+
+You should see the text "Hello World!" appear in your Minecraft chat window.
+
 
 # Workshop 2: Magic Door
 
@@ -115,11 +125,20 @@ XXX: screenshot of opening IDLE.
 
 3. Type the following code:
 
+```python
+import RPi.GPIO as GPIO
+
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.OUT)
+GPIO.output(7,True)
+```
+
+Here's a version with comments explaining each line of code:
+
 **Remember: Code starting with # is a comment. Comments are there to help you
 understand the code, but they aren't part of the program that runs, and you
 don't need to type them.**
-
-XXX: Make sure we have learned about comments in the first workshop
 
 ```python
 
@@ -143,8 +162,11 @@ To turn the LED off again, you can make a change to your program, and run it aga
 
 
 ```python
-GPIO.output(7,False) ## Turn off GPIO pin 7
+# Turn off GPIO pin 7
+GPIO.output(7,False) 
 ```
+
+\pagebreak
 
 ## Turning the LED on and off in Minecraft
 
@@ -157,6 +179,34 @@ XXX: Screenshot of making a door
 2. Select *File > New* in IDLE to open a new editor window.
 
 3. Type in the following code:
+
+```python
+import time
+
+from mcpi.minecraft import Minecraft
+import RPi.GPIO as GPIO
+
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.OUT)
+
+mc = Minecraft.create()
+LED = False
+
+while True:
+    events = mc.events.pollBlockHits()
+    if len(events) > 0:
+        if LED == False:
+            GPIO.output(7, True)
+            LED = True
+        else:
+            GPIO.output(7, False)
+            LED = False
+        mc.events.clearAll()
+        time.sleep(1)
+```
+
+Here's a version with comments explaining what each line of code does:
 
 ```python
 # Import the time library, which will let us pause our program for 1 second.
@@ -219,7 +269,7 @@ while True:
 
 4. Click *Run > Run* in IDLE to run this program.
 
-5. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on.
+5. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
 
 Well done!
 

@@ -2,7 +2,7 @@ all: html epub
 
 pdf: build-dir assets
 	echo 'Building pdfs...'
-	pandoc students.md -fmarkdown-implicit_figures --latex-engine=xelatex -o build/students.pdf
+	pandoc students.md -fmarkdown-implicit_figures --listings -H listings-setup.tex --latex-engine=xelatex -o build/students.pdf
 
 slides: build-dir assets
 	echo 'Building slides...'
