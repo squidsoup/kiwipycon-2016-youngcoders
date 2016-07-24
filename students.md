@@ -18,15 +18,8 @@ XXX: TODO ALL THE THINGS
 
 ```python
 from mcpi.minecraft import Minecraft
-
-# <-- This is a comment.
-# In python, lines of code starting with a '#' aren't run, but can give other coders
-# useful information about how your program works.
-
-# Connect to our Minecraft world.
 mc = Minecraft.create()
 
-# Send a chat command to Minecraft.
 mc.postToChat("Hello World!")
 ```
 
@@ -134,35 +127,17 @@ GPIO.setup(7, GPIO.OUT)
 GPIO.output(7,True)
 ```
 
-Here's a version with comments explaining each line of code:
-
-**Remember: Code starting with # is a comment. Comments are there to help you
-understand the code, but they aren't part of the program that runs, and you
-don't need to type them.**
-
-```python
-
-# Import the GPIO library which will let us program the GPIO pins.
-import RPi.GPIO as GPIO
-
-
-# Use board pin numbering, counting from 1 from the top left pin.
-GPIO.setmode(GPIO.BOARD)
-
-# Set our output to GPIO Pin 7
-GPIO.setup(7, GPIO.OUT)
-
-# Turn on GPIO Pin 7
-GPIO.output(7,True)
-```
-
 4. Click *Run > Run* in IDLE to run this program. You should see the LED turn on.
 
 To turn the LED off again, you can make a change to your program, and run it again:
 
-
+Change:
 ```python
-# Turn off GPIO pin 7
+GPIO.output(7,True) 
+```
+
+to:
+```python
 GPIO.output(7,False) 
 ```
 
@@ -206,7 +181,42 @@ while True:
         time.sleep(1)
 ```
 
-Here's a version with comments explaining what each line of code does:
+4. Click *Run > Run* in IDLE to run this program.
+
+5. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
+
+Well done!
+
+
+\pagebreak
+
+# Additional Resources
+
+## Commented Code
+
+Below are commented versions of the code used in the workshops, to help explain what each line of code does.
+
+### Workshop 2: Magic Door
+
+#### Basic LED program
+
+```python
+
+# Import the GPIO library which will let us program the GPIO pins.
+import RPi.GPIO as GPIO
+
+
+# Use board pin numbering, counting from 1 from the top left pin.
+GPIO.setmode(GPIO.BOARD)
+
+# Set our output to GPIO Pin 7
+GPIO.setup(7, GPIO.OUT)
+
+# Turn on GPIO Pin 7
+GPIO.output(7,True)
+```
+
+#### Full Magic Door program
 
 ```python
 # Import the time library, which will let us pause our program for 1 second.
@@ -267,15 +277,6 @@ while True:
         time.sleep(1)
 ```
 
-4. Click *Run > Run* in IDLE to run this program.
 
-5. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
-
-Well done!
-
-
-\pagebreak
-
-# Additional Resources
 
 XXX: Add additional resources, links to projects etc
