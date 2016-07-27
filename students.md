@@ -25,6 +25,7 @@ mc.postToChat("Hello World!")
 
 You should see the text "Hello World!" appear in your Minecraft chat window.
 
+\pagebreak
 
 # Workshop 2: Magic Door
 
@@ -51,42 +52,49 @@ The GPIO port is the set of 24 pins you see in the picture above. GPIO stands fo
 XXX: description of PI, explaining GPIO
 
 
-
 XXX: Examples of cool inventions using the raspberry Pi.
-
-
-\pagebreak
-
 
 
 In this workshop, we'll be creating a Magic Door in Minecraft, using the Pi's GPIO port and some electronics components. This magic door will turn an LED connected to our PI on and off every time the door opens and shuts in Minecraft.
 
 ### Components
 
-XXX: photo, breadboard showing underside rows
+#### Breadboards
+![](assets/images/breadboard-rows.jpg)
+A breadboard lets us create circuits without having to solder components together. This is great when you want to experiment and change components around (the fancy name for this is *prototyping*). You can't see them under your breadboard because of the adhesive backing, but each row of 5 wee holes is connected by metal clips.
 
-XXX: resistor
+You might be wondering why it is called a breadboard. In the early days of electronics, hobbiests sometimes made circuits on *actual* breadboards. I bet their parents weren't very impressed!
 
-XXX: LED
+![](assets/images/real-breadboard.jpg)
 
-XXX: male to female jumper cables
+#### LEDs (Light Emitting Diodes)
+![](assets/images/leds.jpg)
 
+LEDs are electronic components that light up when a current is passed through them.
+
+#### Resistors
+![](assets/images/resistors.jpg)
+
+A resister is a component that limits the amount of current passing through a circuit. We're going to use one to prevent our LED from burning out too soon.
+
+#### Male to Female jumper cables
+![](assets/images/jumper-cable.png)
+
+Jumper cables allow us to create a circuit from the GPIO pins to our breadboard.
+
+\pagebreak
 
 ## Creating a Circuit
 
 We're going to make a simple circuit using our breadboard now.
 
-You might be wondering why it is calLED a breadboard. In the early days of electronics, hobbiests sometimes made circuits on *actual* breadboards. I bet their parents weren't very impressed!
-
-![](assets/images/real-breadboard.jpg)
-
 While we're making our circuit, it's important that the Raspberry Pi is switched *off* to help prevent damage to our electronic components.
 
-1. Shutdown your raspberry Pi.
+1. Shutdown your Raspberry Pi. Click *Menu > Shutdown... > Shutdown*.
 
-XXX: image shutdown
+![](assets/images/shutdown-pi.png)
 
-2. Disconnect the power.
+2. Wait a moment, and then disconnect the power.
 
 XXX: image disconnect power.
 
@@ -112,9 +120,11 @@ This will allow us to turn our circuit on and off with code.
 
 1. Open the python editor IDLE.
 
-XXX: screenshot of opening IDLE.
+![](assets/images/run-idle.png)
 
 2. Select *File > New* to open a new editor window.
+
+![](assets/images/file-new-idle.png)
 
 3. Type the following code:
 
@@ -127,7 +137,7 @@ GPIO.setup(7, GPIO.OUT)
 GPIO.output(7,True)
 ```
 
-4. Click *Run > Run* in IDLE to run this program. You should see the LED turn on.
+4. Click *Run > Run Module* in IDLE to run this program. You should see the LED turn on.
 
 To turn the LED off again, you can make a change to your program, and run it again:
 
@@ -147,13 +157,19 @@ GPIO.output(7,False)
 
 Now we're going to make a slightly more complicated program that can turn our LED on and off in Minecraft!
 
+1. Open Minecraft Pi, and start a new world.
 
-1. Open Minecraft Pi and create a door.
-XXX: Screenshot of making a door
+![](assets/images/start-mc.png)
 
-2. Select *File > New* in IDLE to open a new editor window.
+![](assets/images/select-world.png)
 
-3. Type in the following code:
+2. Create a door. It doesn't matter where it goes really, so just in front of you will do.
+
+![](assets/images/create-door.png)
+
+3. Select *File > New* in IDLE to open a new editor window.
+
+4. Type in the following code:
 
 ```python
 import time
@@ -181,9 +197,9 @@ while True:
         time.sleep(1)
 ```
 
-4. Click *Run > Run* in IDLE to run this program.
+5. Click *Run > Run Module* in IDLE to run this program.
 
-5. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
+6. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
 
 Well done!
 
@@ -238,18 +254,22 @@ GPIO.setup(7, GPIO.OUT)
 # Steve is up to in the Minecraft world!
 mc = Minecraft.create()
 
-# We need to store the 'state' of our LED, which can be either ON or OFF.
+# We need to store the 'state' of our LED, which can be either
+# ON or OFF.
 # In code, we can represent ON and OFF with True and False.
 # Since the LED is OFF to start with, we'll set this to False.
 LED = False
 
 # This is the start of an infinite loop.
-# Code that follows 'while True' will continue to run until we stop our program.
-# In game programming, sometimes this is called a 'main loop, or 'game loop'.
+# Code that follows 'while True' will continue to run until
+# we stop our program.
+# In game programming, sometimes this is called a 'main loop,
+# or 'game loop'.
 while True:
-    # Our Minecaft object 'mc' can tell us lots of different things about
-    # what is happening in Minecraft. When something happens in Minecraft
-    # it gets recorded as an 'event'. The events we want to know about are
+    # Our Minecaft object 'mc' can tell us lots of different things
+    # about what is happening in Minecraft.
+    # Something happening in Minecraft is called an 'event'.
+    # The events we want to know about are
     # doors opening and closing, which Minecraft stores as a BlockHit.
     # mc.events.pollBlockHits() will create a List of events if any have occured.
     events = mc.events.pollBlockHits()
