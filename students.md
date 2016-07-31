@@ -112,7 +112,11 @@ Remember, if you want to go back to the start, change x, y and z back to their o
 
 3. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
 
-4. Experiment with changing the x, y and z variables and send Steve to different parts of the world!
+4. Go back to the original coordinates.
+
+5. Try to teleport to the top of the tower. Once you have reached the top of the tower, whisper the secret message to a Young Coders helper, and get a small prize.
+
+XXX: Make tower! (and young coder sign) in game
 
 
 \pagebreak
@@ -120,6 +124,7 @@ Remember, if you want to go back to the start, change x, y and z back to their o
 ## Workshop 1, Exercise 3: Something Cool
 
 XXX: come up with 3rd exercise
+
 
 \pagebreak
 
