@@ -2,30 +2,127 @@
 
 ![](assets/images/gigcity_logo_white.png)
 ![](assets/images/OCTLogo_RGB.jpg)
+![](assets/images/hive-logo.png)
 
 \pagebreak
 
 
 # Workshop 1
 
-## Hello World
+## Workshop 1, Exercise 1: Hello World
 
 One of the first programs you usually write, when learning how to program is 'Hello World'.
-'Hello World' is a simple program which prints the text 'Hello World!' somewhere!
-Today we're going to get started by printing 'Hello World!' in Minecraft.
+'Hello World' is a simple program which prints the text 'Hello World!' somewhere - usually to a terminal or console window, but today we're going to print 'Hello World!' in Minecraft!
 
-XXX: TODO ALL THE THINGS
+1. Open Minecraft Pi, and open the selected world.
+
+![](assets/images/start-mc.png)
+
+![](assets/images/select-world.png)
+
+2. Open the python editor IDLE.
+
+![](assets/images/run-idle.png)
+
+3. Select *File > New* to open a new editor window.
+
+![](assets/images/file-new-idle.png)
+
+4. Type the following code in the new editor window:
 
 ```python
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-mc.postToChat("Hello World!")
+mc.postToChat('Hello World!')
 ```
 
-You should see the text "Hello World!" appear in your Minecraft chat window.
+5. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
+
+### Learning about variables
+
+In Python, we can store data in something called a variable. We're going to store a *string* in a *variable*. In Python, a string is a bit of text inside either '' or "". In our earlier code, the data was the *string* `'Hello World!'`.
+
+Let's create a variable called `message` and assign it a different string.
+
+We can then print the message out by calling `mc.postToChat` with it.
+
+1. Edit your program so that it looks like the following one:
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+message = 'Hello Minecraft World!'
+mc.postToChat(message)
+```
+
+2. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello Minecraft World!" appear in your Minecraft chat window.
+
+### Joining string variables
+
+We can also join strings together to print out messages with several variables.
+
+1. Edit your program and make variables for your first name and last name.
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+first_name = 'Type your first name here'
+last_name = 'Type your last name here'
+
+mc.postToChat('Hello ' + first_name + ' ' + last_name + '!')
+```
+
+2. Click *Run > Run Module* in IDLE to run this program. You should see yourself greeted in the Minecraft window.
 
 \pagebreak
+
+## Workshop 1, Exercise 2: Let's Teleport!
+
+XXX: Teleportation/coordinates tutorial
+Now that we know about variables, we can use them to teleport Steve all over the place!
+
+XXX: Screenshot showing coordiates in Minecraft Pi.
+
+In Minecraft Pi, you can see your current position in the world in the top left of the screen.
+
+Coordinates have 3 parts: x, y and z.
+
+Let's create variables for x, y and z.
+
+
+1. In IDLE, Select *File > New* to open a new editor window.
+
+2. Type in the following code:
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+x = 20  XXX: Get coordinates from world on disk
+y = 200
+z = 15
+
+mc.player.setTilePos(x, y, z)
+```
+
+Remember, if you want to go back to the start, change x, y and z back to their original values.
+
+3. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
+
+4. Experiment with changing the x, y and z variables and send Steve to different parts of the world!
+
+
+\pagebreak
+
+## Workshop 1, Exercise 3: Something Cool
+
+XXX: come up with 3rd exercise
+
+\pagebreak
+
 
 # Workshop 2: Magic Door
 
@@ -84,7 +181,7 @@ Jumper cables allow us to create a circuit from the GPIO pins to our breadboard.
 
 \pagebreak
 
-## Creating a Circuit
+## Workshop 2, Exercise 1: Creating a Circuit
 
 We're going to make a simple circuit using our breadboard now.
 
@@ -110,23 +207,27 @@ If your circuit is wired up correctly, the LED should turn on when the Pi starts
 
 5. Shutdown, and turn your Pi off again.
 
-6. Now we're going to move the first wire from pin 1, to the GPIO controlled pin 7.
+\pagebreak
+
+## Workshop 2, Exercise 2: Turning the LED on and off with code
+
+1. Now we're going to move the first wire from pin 1, to the GPIO controlled pin 7.
 
 This will allow us to turn our circuit on and off with code.
 
 ![](assets/images/led-gpio-controlled_bb.png)
 
-## Turning the LED on and off with code
+2. Turn your Pi back on.
 
-1. Open the python editor IDLE.
+3. Open the python editor IDLE.
 
 ![](assets/images/run-idle.png)
 
-2. Select *File > New* to open a new editor window.
+4. Select *File > New* to open a new editor window.
 
 ![](assets/images/file-new-idle.png)
 
-3. Type the following code:
+5. Type the following code:
 
 ```python
 import RPi.GPIO as GPIO
@@ -137,12 +238,12 @@ GPIO.setup(7, GPIO.OUT)
 GPIO.output(7,True)
 ```
 
-4. Click *Run > Run Module* in IDLE to run this program. You should see the LED turn on.
+6. Click *Run > Run Module* in IDLE to run this program. You should see the LED turn on.
 
 To turn the LED off again, you can make a change to your program, and run it again:
 
 Change:
-```python
+```python 
 GPIO.output(7,True) 
 ```
 
@@ -153,11 +254,11 @@ GPIO.output(7,False)
 
 \pagebreak
 
-## Turning the LED on and off in Minecraft
+## Workshop 2, Exercise 3: Turning the LED on and off in Minecraft
 
 Now we're going to make a slightly more complicated program that can turn our LED on and off in Minecraft!
 
-1. Open Minecraft Pi, and start a new world.
+1. Open Minecraft Pi, and open the selected world.
 
 ![](assets/images/start-mc.png)
 
@@ -208,7 +309,40 @@ Well done!
 
 # Additional Resources
 
-## Commented Code
+Below are some additional resources, both for inspiration and further learning.
+
+## Local Education Resources
+
+[Gasworks NZ](https://gasworks.nz) (https://gasworks.nz) - A volunteer organisation based at the Gasworks in South Dunedin, providing an excellent range of coding, robotics and electronics classes and activities for kids.
+
+[
+
+## Raspberry Pi
+
+![](assets/images/raspberry-pi-logo.png)
+
+### Vendors
+
+[Nicegear](https://nicegear.co.nz) (https://nicegear.co.nz) - New Zealand based vendor of Raspberry Pi, and other electronics and embedded computing products with excellent customer support.
+
+### Tutorials and Blogs
+
+[Raspberry Pi StackExchange](http://raspberrypi.stackexchange.com) (http://raspberrypi.stackexchange.com) - An invaluable resource, providing answers to thousands of questions about Raspberry Pis.
+
+[Raspberry Pi Kid](https://raspberrypikid.wordpress.com) (https://raspberrypikid.wordpress.com) - A blog by a 14 year old, journaling their learning experiences with coding and electronics using their Raspberry Pi.
+
+## Python
+![](assets/images/python-logo.png)
+
+[Code Academy](https://www.codecademy.com/learn/python) (https://www.codecademy.com/learn/python) - Self paced Python courses.
+
+[Invent with Python](https://automatetheboringstuff.com/) (https://automatetheboringstuff.com/) - A free online version of the popular book, showing you how to automate tasks on your computer while learning Python.
+
+[Official Python Documentation](https://www.python.org/doc/) (https://www.python.org/doc/) - Official docs for python 2 and 3.
+
+\pagebreak
+
+# Commented Code
 
 Below are commented versions of the code used in the workshops, to help explain what each line of code does.
 
@@ -296,7 +430,3 @@ while True:
         # from the top again.
         time.sleep(1)
 ```
-
-
-
-XXX: Add additional resources, links to projects etc
