@@ -320,7 +320,7 @@ Below are some additional resources, both for inspiration and further learning.
 
 [Gasworks NZ](https://gasworks.nz) (https://gasworks.nz) - A volunteer organisation based at the Gasworks in South Dunedin, providing an excellent range of coding, robotics and electronics classes and activities for kids.
 
-[
+[Dunedin Makerspace](http://dspace.org.nz/) (http://dspace.org.nz/) - A community workshop, providing resources for electronics, crafts, art, programming and engineering.
 
 ## Raspberry Pi
 
