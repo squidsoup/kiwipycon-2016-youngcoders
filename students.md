@@ -6,8 +6,8 @@
 
 \pagebreak
 
-
-# Workshop 1
+XXX: Add save to filename instructions for each exercise!
+# Workshop 1: Let's Learn Python!
 
 ## Workshop 1, Exercise 1: Hello World
 
@@ -41,7 +41,7 @@ mc.postToChat('Hello World!')
 
 ### Learning about variables
 
-In Python, we can store data in something called a variable. We're going to store a *string* in a *variable*. In Python, a string is a bit of text inside either '' or "". In our earlier code, the data was the *string* `'Hello World!'`.
+In Python, we can store data in something called a variable. We're going to store a *string* in a *variable*. In Python, a string is a bit of text inside either ' ' or " ". In our earlier code, the data was the *string* `'Hello World!'`.
 
 Let's create a variable called `message` and assign it a different string.
 
@@ -69,29 +69,43 @@ We can also join strings together to print out messages with several variables.
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-first_name = 'Type your first name here'
-last_name = 'Type your last name here'
-
-mc.postToChat('Hello ' + first_name + ' ' + last_name + '!')
+name = 'Type your name here'
+mc.postToChat('Hello ' + name + '!')
 ```
 
 2. Click *Run > Run Module* in IDLE to run this program. You should see yourself greeted in the Minecraft window.
+
+### Asking for input
+
+Instead of directly assigning our name to the variable `name`, we can ask our program to prompt us for a name using `input`.
+
+1. Edit your program and assign the result of `input` to the `name` variable.
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+name = input('What is your name?')
+mc.postToChat('Hello ' + name + '!')
+```
+
+2. Click *Run > Run Module* in IDLE to run this program. You should see yourself greeted in the Minecraft window.
+
+Well done, you've completed the first exercise!
 
 \pagebreak
 
 ## Workshop 1, Exercise 2: Let's Teleport!
 
-XXX: Teleportation/coordinates tutorial
-Now that we know about variables, we can use them to teleport Steve all over the place!
-
-XXX: Screenshot showing coordiates in Minecraft Pi.
+Now that we know about variables, we can use them to teleport Steve all over the place in style!
 
 In Minecraft Pi, you can see your current position in the world in the top left of the screen.
 
-Coordinates have 3 parts: x, y and z.
+XXX: Screenshot showing coordiates in Minecraft Pi.
+
+Coordinates have 3 parts which we can use to represent a position in 3d space: x, y and z.
 
 Let's create variables for x, y and z.
-
 
 1. In IDLE, Select *File > New* to open a new editor window.
 
@@ -112,19 +126,91 @@ Remember, if you want to go back to the start, change x, y and z back to their o
 
 3. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
 
-4. Go back to the original coordinates.
+4. Go back to your original coordinates. XXX: Find starting coordinates.
 
-5. Try to teleport to the top of the tower. Once you have reached the top of the tower, whisper the secret message to a Young Coders helper, and get a small prize.
+5. Try to teleport to the top of the tower. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, and get a small prize!
 
 XXX: Make tower! (and young coder sign) in game
 
 
 \pagebreak
 
-## Workshop 1, Exercise 3: Something Cool
+## Workshop 1, Exercise 3: Blockomancy
 
-XXX: come up with 3rd exercise
+### Let's code a block!
 
+In Minecraft, every block type, from diamond to cactus, has a *block id*. Check out the handy reference in the back of *Learn to Program with Minecraft* on page 285 to see all the *block ids*.
+
+Let's make a program that creates a cobblestone block at Steve's location.
+
+1. In IDLE, select *File > New* to open a new editor window.
+
+2. Type the following code in the new editor window:
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+block_id = 4  # 4 is the id for cobblestone 
+pos = mc.player.getTilePos()
+
+x = pos.x
+y = pos.y
+z = pos.z
+mc.setBlock(x, y, z, block_id)
+```
+
+### XXX: Do more with blocks
+
+## Workshop 1, Bonus Exercise: Blockomancy Plus
+
+Let's improve our block creating program, so that it asks for user input. We've got a tricky situation though - the input() function returns a `string`, but the setBlock() function requires a *number* which in programming we call an *integer*.
+
+### Learning about Strings and Integers
+
+First let's see what happens when we try to add numbers together as strings in the IDLE shell. The IDLE shell is a handy tool that will run the python code you type after you hit *enter*. It isn't a great way to write long programs, but it can be very handy for learning and exploring.
+
+1. Find the IDLE shell window. It will have a prompt starting with `>>>`.
+
+2. Let's try adding some numbers together as strings:
+
+`>>> '1' + '2'`
+
+What is the result? The answer you get back is correct, because we have joined the strings `'1'` and `'2'` together, but it won't help us solve any maths problems!
+
+To make the code above return `3`, we can use the `int()` function. When you pass a string to `int()` e.g. `int('1')` it will convert it to an integer.
+
+`>>> int('1') + int('2')`
+
+You can also of course type:
+
+`>>> 1 + 2`
+
+### Updating our Block program to use input() and int()
+
+1. In IDLE, Select *File > New* to open a new editor window.
+
+The program below is incomplete, and you'll need to fix the bits that say `# TODO:`!
+
+2. Type and update the program below to ask for user input for the block_id:
+
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+block_id = # TODO: get block_id from user input, remember to convert to an integer!
+pos = mc.player.getTilePos()
+
+x = pos.x
+y = pos.y
+z = pos.z
+mc.setBlock(x, y, z, block_id)
+```
+
+3. Does your program work? Ask a helper to check your code.
+
+Well done!
 
 \pagebreak
 
