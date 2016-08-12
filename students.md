@@ -7,6 +7,8 @@
 \pagebreak
 
 XXX: Add save to filename instructions for each exercise!
+XXX: Add source to src/!
+
 # Workshop 1: Let's Learn Python!
 
 ## Workshop 1, Exercise 1: Hello World
@@ -95,7 +97,7 @@ Well done, you've completed the first exercise!
 
 \pagebreak
 
-## Workshop 1, Exercise 2: Let's Teleport!
+## Workshop 1, Exercise 2a: Let's Teleport!
 
 Now that we know about variables, we can use them to teleport Steve all over the place in style!
 
@@ -115,9 +117,9 @@ Let's create variables for x, y and z.
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-x = 20  XXX: Get coordinates from world on disk
-y = 200
-z = 15
+x = -5.4
+y = 12.0
+z = -14.4
 
 mc.player.setTilePos(x, y, z)
 ```
@@ -126,18 +128,68 @@ Remember, if you want to go back to the start, change x, y and z back to their o
 
 3. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
 
-4. Go back to your original coordinates. XXX: Find starting coordinates.
+4. Go back to your original coordinates. (-5.4, 12, -14)
 
-5. Try to teleport to the top of the tower. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, and get a small prize!
+5. Try to teleport to the top of the tower on the left. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise
 
-XXX: Make tower! (and young coder sign) in game
 
+## Workshop 1, Exercise 2b: Teleportation Tour
+
+You may have noticed that there are two towers in our world. Let's write some code that let's us teleport from our starting location, to the top of the tower on the left, to the top of the tower on the right, and finally back to the start!
+
+1. Modify our previous program, to teleport Steve from one place to another.
+
+The code below is *incomplete* - you will need to fill in the blanks. Look for comments in the code, starting with '#' to figure out what you need to fix.
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+start_x = -5.4
+start_y = 12.0
+start_z = -14.4
+
+# Add coordinates for tower_1
+tower_1_x = 0
+tower_1_y = 0
+tower_1_z = 0
+
+# Add variables and coordinates for tower_2
+
+
+mc.player.setTilePos(start_x, start_y, start_z)
+mc.player.setTilePos(tower_1_x, tower_1_y, tower_1_z)
+# teleport to tower 2
+
+# teleport back to start
+
+```
+
+Got it working? Save your file as `teleport.py` and ask a Young Coders helper to review your code!
+
+2. You might have noticed that the last bit of code made Steve teleport around pretty quickly - the poor guy's going to be sick ![](assets/images/barf.png)!
+
+Let's see if we can make his Teleportation Tour a little more comfortable...
+
+Python has a handy module called `time` which we can import to do all sorts of time related things, including pausing our program!
+
+Add another import statement to your code:
+
+```python
+import time
+
+from mcpi.minecraft import Minecraft
+```
+
+Now use `time.wait()` in your code to pause a few seconds every time Steve teleports to a new location. *Hint:* time.wait() is a *function* which takes a number of seconds as it's parameter (similar to how `setTilePos` takes coordinates as parameters).
+
+Figure it out? Ask a Young Coders helper if you're stuck, or you think you've got it working!
 
 \pagebreak
 
 ## Workshop 1, Exercise 3: Blockomancy
 
-### Let's code a block!
+### Let's make blocks with code!
 
 In Minecraft, every block type, from diamond to cactus, has a *block id*. Check out the handy reference in the back of *Learn to Program with Minecraft* on page 285 to see all the *block ids*.
 
