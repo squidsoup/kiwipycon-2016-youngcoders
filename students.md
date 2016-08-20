@@ -7,7 +7,6 @@
 \pagebreak
 
 XXX: Add save to filename instructions for each exercise!
-XXX: Add source to src/!
 
 # Workshop 1: Let's Learn Python!
 
@@ -26,11 +25,7 @@ One of the first programs you usually write, when learning how to program is 'He
 
 ![](assets/images/run-idle.png)
 
-3. Select *File > New* to open a new editor window.
-
-![](assets/images/file-new-idle.png)
-
-4. Type the following code in the new editor window:
+3. Type the following code in the new editor window:
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -38,6 +33,8 @@ mc = Minecraft.create()
 
 mc.postToChat('Hello World!')
 ```
+
+4. Click *File > Save* and save this file as `helloworld.py`.
 
 5. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
 
@@ -59,7 +56,9 @@ message = 'Hello Minecraft World!'
 mc.postToChat(message)
 ```
 
-2. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello Minecraft World!" appear in your Minecraft chat window.
+2. Click *Run > Run Module* in IDLE to run this program. If you see a dialog popup that says "Source must be saved.", click OK.
+
+You should see the text "Hello Minecraft World!" appear in your Minecraft chat window.
 
 ### Joining string variables
 
@@ -91,7 +90,10 @@ name = input('What is your name?')
 mc.postToChat('Hello ' + name + '!')
 ```
 
-2. Click *Run > Run Module* in IDLE to run this program. You should see yourself greeted in the Minecraft window.
+2. Click *Run > Run Module* in IDLE to run this program. Once again, save your file if prompted.
+
+You should see yourself greeted in the Minecraft window.
+
 
 Well done, you've completed the first exercise!
 
@@ -110,8 +112,11 @@ Coordinates have 3 parts which we can use to represent a position in 3d space: x
 Let's create variables for x, y and z.
 
 1. In IDLE, Select *File > New* to open a new editor window.
+![](assets/images/file-new-idle.png)
 
-2. Type in the following code:
+2. Click *File > Save* and save this file as `teleport.py`.
+
+3. Type in the following code:
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -126,11 +131,11 @@ mc.player.setTilePos(x, y, z)
 
 Remember, if you want to go back to the start, change x, y and z back to their original values.
 
-3. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
+4. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
 
-4. Go back to your original coordinates. (-5.4, 12, -14)
+5. Go back to your original coordinates. (-5.4, 12, -14)
 
-5. Try to teleport to the top of the tower on the left. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise
+6. Try to teleport to the top of the tower on the left. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise
 
 
 ## Workshop 1, Exercise 2b: Teleportation Tour
@@ -139,7 +144,7 @@ You may have noticed that there are two towers in our world. Let's write some co
 
 1. Modify our previous program, to teleport Steve from one place to another.
 
-The code below is *incomplete* - you will need to fill in the blanks. Look for comments in the code, starting with '#' to figure out what you need to fix.
+The code below is *incomplete* - you will need to fill in the blanks where the comments say 'TODO:'. Look for comments in the code, starting with '#' to figure out what you need to fix.
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -149,23 +154,21 @@ start_x = -5.4
 start_y = 12.0
 start_z = -14.4
 
-# Add coordinates for tower_1
-tower_1_x = 0
-tower_1_y = 0
-tower_1_z = 0
+tower_1_x = 0 # Todo: Add x coordinates for tower_1
+tower_1_y = 0 # Todo: Add y coordinates for tower_1
+tower_1_z = 0 # Todo: Add z coordinates for tower_1
 
-# Add variables and coordinates for tower_2
-
+# Todo: Add variable and x coordinates for tower_2
+# Todo: Add variable and y coordinates for tower_2
+# Todo: Add variable and z coordinates for tower_2 
 
 mc.player.setTilePos(start_x, start_y, start_z)
 mc.player.setTilePos(tower_1_x, tower_1_y, tower_1_z)
-# teleport to tower 2
-
-# teleport back to start
+# Todo: teleport to tower 2 using mc.player.setTilePos
+# Todo: teleport back to start using mc.player.setTilePos
 
 ```
-
-Got it working? Save your file as `teleport.py` and ask a Young Coders helper to review your code!
+Got it working? Ask a Young Coders helper to review your code!
 
 2. You might have noticed that the last bit of code made Steve teleport around pretty quickly - the poor guy's going to be sick ![](assets/images/barf.png)!
 
@@ -173,7 +176,7 @@ Let's see if we can make his Teleportation Tour a little more comfortable...
 
 Python has a handy module called `time` which we can import to do all sorts of time related things, including pausing our program!
 
-Add another import statement to your code:
+Add another import statement to the top of your code:
 
 ```python
 import time
@@ -181,13 +184,15 @@ import time
 from mcpi.minecraft import Minecraft
 ```
 
-Now use `time.wait()` in your code to pause a few seconds every time Steve teleports to a new location. *Hint:* time.wait() is a *function* which takes a number of seconds as it's parameter (similar to how `setTilePos` takes coordinates as parameters).
+Now use `time.wait()` in your code to pause a few seconds after every time Steve teleports to a new location.
 
-Figure it out? Ask a Young Coders helper if you're stuck, or you think you've got it working!
+*Hint:* time.wait() is a *function* which takes a number of seconds as it's parameter (similar to how `setTilePos` takes coordinates as parameters).
+
+Figure it out? Ask a Young Coders helper if you're stuck, or think you've got it working!
 
 \pagebreak
 
-## Workshop 1, Exercise 3: Blockomancy
+## Workshop 1, Exercise 3a: Blockomancy
 
 ### Let's make blocks with code!
 
@@ -197,7 +202,9 @@ Let's make a program that creates a cobblestone block at Steve's location.
 
 1. In IDLE, select *File > New* to open a new editor window.
 
-2. Type the following code in the new editor window:
+2. Click *File > Save* and save this file as `blocks.py`.
+
+3. Type the following code in the new editor window:
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -211,6 +218,8 @@ y = pos.y
 z = pos.z
 mc.setBlock(x, y, z, block_id)
 ```
+
+4. Experiment with changing the value of `block_id` and see what other types of blocks you can create.
 
 ### XXX: Do more with blocks
 
@@ -260,7 +269,7 @@ z = pos.z
 mc.setBlock(x, y, z, block_id)
 ```
 
-3. Does your program work? Ask a helper to check your code.
+Does your program work? Ask a helper to check your code.
 
 Well done!
 
@@ -289,12 +298,6 @@ The GPIO port is the set of 24 pins you see in the picture above. GPIO stands fo
 
 ![](assets/images/gpio-numbers.png)
 
-XXX: description of PI, explaining GPIO
-
-
-XXX: Examples of cool inventions using the raspberry Pi.
-
-
 In this workshop, we'll be creating a Magic Door in Minecraft, using the Pi's GPIO port and some electronics components. This magic door will turn an LED connected to our PI on and off every time the door opens and shuts in Minecraft.
 
 ### Components
@@ -312,7 +315,10 @@ You might be wondering why it is called a breadboard. In the early days of elect
 
 LEDs are electronic components that light up when a current is passed through them.
 
+\pagebreak
+
 #### Resistors
+
 ![](assets/images/resistors.jpg)
 
 A resister is a component that limits the amount of current passing through a circuit. We're going to use one to prevent our LED from burning out too soon.
@@ -333,10 +339,12 @@ While we're making our circuit, it's important that the Raspberry Pi is switched
 1. Shutdown your Raspberry Pi. Click *Menu > Shutdown... > Shutdown*.
 
 ![](assets/images/shutdown-pi.png)
+\pagebreak
 
 2. Wait a moment, and then disconnect the power.
 
-XXX: image disconnect power.
+![](assets/images/power-restart.jpg)
+\pagebreak
 
 3. Wiring up our test circuit
 
@@ -344,11 +352,11 @@ Our first circuit is going to test that our components are working correctly and
 
 ![](assets/images/led-test_bb.png)
 
-4. Turn your Pi back on
+4. Turn your Pi back on by reconnecting the power.
 
 If your circuit is wired up correctly, the LED should turn on when the Pi starts.
 
-5. Shutdown, and turn your Pi off again.
+5. Shutdown, and turn your Pi off again by disconnecting the power.
 
 \pagebreak
 
@@ -360,9 +368,9 @@ This will allow us to turn our circuit on and off with code.
 
 ![](assets/images/led-gpio-controlled_bb.png)
 
-2. Turn your Pi back on.
+2. Turn your Pi back on by reconnecting the power cable.
 
-3. Open the python editor IDLE.
+3. Once your Pi has rebooted, open the python editor IDLE.
 
 ![](assets/images/run-idle.png)
 
@@ -381,7 +389,9 @@ GPIO.setup(7, GPIO.OUT)
 GPIO.output(7,True)
 ```
 
-6. Click *Run > Run Module* in IDLE to run this program. You should see the LED turn on.
+6. Click *File > Save* and save this file as `led.py`.
+
+7. Click *Run > Run Module* in IDLE to run this program. You should see the LED turn on.
 
 To turn the LED off again, you can make a change to your program, and run it again:
 
@@ -441,11 +451,14 @@ while True:
         time.sleep(1)
 ```
 
-5. Click *Run > Run Module* in IDLE to run this program.
+5. Click *File > Save* and save this file as `ledminecraft.py`.
 
-6. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
+6. Click *Run > Run Module* in IDLE to run this program.
 
-Well done!
+7. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
+
+
+Well done - you've completed the Young Coders 2016 workshop. We hope you've learned lots of new things! If you're keen to learn more about electronics and coding, check out some of the resources under *Local Education Resources* on the next page.
 
 
 \pagebreak
@@ -458,7 +471,7 @@ Below are some additional resources, both for inspiration and further learning.
 
 [Gasworks NZ](https://gasworks.nz) (https://gasworks.nz) - A volunteer organisation based at the Gasworks in South Dunedin, providing an excellent range of coding, robotics and electronics classes and activities for kids.
 
-[Dunedin Makerspace](http://dspace.org.nz/) (http://dspace.org.nz/) - A community workshop, providing resources for electronics, crafts, art, programming and engineering.
+[Dunedin Makerspace](http://dspace.org.nz) (http://dspace.org.nz/) - A community workshop, providing resources for electronics, crafts, art, programming and engineering.
 
 ## Raspberry Pi
 
