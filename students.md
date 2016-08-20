@@ -1,12 +1,26 @@
 ![](assets/images/cover.png)
 
+\pagebreak
+
+# Supporters and Sponsors
+
+Thanks to our awesome supporters and sponsors who have made this content and workshop possible.
+
 ![](assets/images/gigcity_logo_white.png)
 ![](assets/images/OCTLogo_RGB.jpg)
 ![](assets/images/hive-logo.png)
 
 \pagebreak
 
-XXX: Add save to filename instructions for each exercise!
+# Workshop 1: Stamp Sheet
+
+After you complete an exercise, ask a Young Coders helper to review your work and receive a stamp on your stamp sheet.
+
+![](assets/images/emoji/thumbsup.png)
+
+![](assets/images/stamp-sheet-1.png)
+
+\pagebreak
 
 # Workshop 1: Let's Learn Python!
 
@@ -15,17 +29,19 @@ XXX: Add save to filename instructions for each exercise!
 One of the first programs you usually write, when learning how to program is 'Hello World'.
 'Hello World' is a simple program which prints the text 'Hello World!' somewhere - usually to a terminal or console window, but today we're going to print 'Hello World!' in Minecraft!
 
-1. Open Minecraft Pi, and open the selected world.
+1. Make sure your Raspberry Pi is booted up. You should see a desktop with Young Coders wallpaper and a menu button in the top left. If you don't see a desktop, please ask a Young Coders helper for a hand.
+
+2. Open Minecraft Pi, and open the selected world.
 
 ![](assets/images/start-mc.png)
 
 ![](assets/images/select-world.png)
 
-2. Open the python editor IDLE.
+3. Open the python editor IDLE.
 
 ![](assets/images/run-idle.png)
 
-3. Type the following code in the new editor window:
+4. Type the following code in the new editor window:
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -34,9 +50,9 @@ mc = Minecraft.create()
 mc.postToChat('Hello World!')
 ```
 
-4. Click *File > Save* and save this file as `helloworld.py`.
+5. Click *File > Save* and save this file as `helloworld.py`.
 
-5. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
+6. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
 
 ### Learning about variables
 
@@ -112,11 +128,10 @@ Coordinates have 3 parts which we can use to represent a position in 3d space: x
 Let's create variables for x, y and z.
 
 1. In IDLE, Select *File > New* to open a new editor window.
+
 ![](assets/images/file-new-idle.png)
 
-2. Click *File > Save* and save this file as `teleport.py`.
-
-3. Type in the following code:
+2. Type in the following code:
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -130,6 +145,8 @@ mc.player.setTilePos(x, y, z)
 ```
 
 Remember, if you want to go back to the start, change x, y and z back to their original values.
+
+3. Click *File > Save* and save this file as `teleport.py`.
 
 4. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
 
@@ -170,7 +187,9 @@ mc.player.setTilePos(tower_1_x, tower_1_y, tower_1_z)
 ```
 Got it working? Ask a Young Coders helper to review your code!
 
-2. You might have noticed that the last bit of code made Steve teleport around pretty quickly - the poor guy's going to be sick ![](assets/images/barf.png)!
+2. You might have noticed that the last bit of code made Steve teleport around pretty quickly - the poor guy's going to be sick!
+
+![](assets/images/barf.png)
 
 Let's see if we can make his Teleportation Tour a little more comfortable...
 
@@ -196,15 +215,13 @@ Figure it out? Ask a Young Coders helper if you're stuck, or think you've got it
 
 ### Let's make blocks with code!
 
-In Minecraft, every block type, from diamond to cactus, has a *block id*. Check out the handy reference in the back of *Learn to Program with Minecraft* on page 285 to see all the *block ids*.
+In Minecraft, every block type, from diamond to cactus, has a *block id*. (*Learn to Program with Minecraft* has a handy *block id* reference on page 285).
 
 Let's make a program that creates a cobblestone block at Steve's location.
 
 1. In IDLE, select *File > New* to open a new editor window.
 
-2. Click *File > Save* and save this file as `blocks.py`.
-
-3. Type the following code in the new editor window:
+2. Type the following code in the new editor window:
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -219,9 +236,41 @@ z = pos.z
 mc.setBlock(x, y, z, block_id)
 ```
 
-4. Experiment with changing the value of `block_id` and see what other types of blocks you can create.
+3. Click *File > Save* and save this file as `blocks.py`.
 
-### XXX: Do more with blocks
+4. Click *Run > Run Module* in IDLE to run your program.
+
+5. Experiment with changing the value of `block_id` and see what other types of blocks you can create.
+
+## Workshop 1, Exercise 3b: Blockstacking
+
+Let's extend our block program, so that we can create stacks of blocks.
+
+1. Edit your program
+
+```python
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
+
+block_id = 4  # 4 is the id for cobblestone 
+pos = mc.player.getTilePos()
+
+x = pos.x
+y = pos.y
+z = pos.z
+mc.setBlock(x, y, z, block_id)
+
+y = y + 1 # increase the height of our block by 1 unit
+mc.setBlock(x, y, z, block_id)
+```
+
+2. Try to write a program that will create an even larger stack of blocks.
+
+Got it working? Ask a Young Coders helper to have a look.
+
+\pagebreak
+
+**If you still have time left, you can try the following bonus exercice!**
 
 ## Workshop 1, Bonus Exercise: Blockomancy Plus
 
@@ -275,6 +324,16 @@ Well done!
 
 \pagebreak
 
+
+# Workshop 2: Stamp Sheet
+
+After you complete an exercise, ask a Young Coders helper to review your work and receive a stamp on your stamp sheet.
+
+![](assets/images/emoji/thumbsup.png)
+
+![](assets/images/stamp-sheet-2.png)
+
+\pagebreak
 
 # Workshop 2: Magic Door
 
@@ -471,7 +530,7 @@ Below are some additional resources, both for inspiration and further learning.
 
 [Gasworks NZ](https://gasworks.nz) (https://gasworks.nz) - A volunteer organisation based at the Gasworks in South Dunedin, providing an excellent range of coding, robotics and electronics classes and activities for kids.
 
-[Dunedin Makerspace](http://dspace.org.nz) (http://dspace.org.nz/) - A community workshop, providing resources for electronics, crafts, art, programming and engineering.
+[Dunedin Makerspace](http://dspace.org.nz) (http://dspace.org.nz) - A community workshop, providing resources for electronics, crafts, art, programming and engineering.
 
 ## Raspberry Pi
 
