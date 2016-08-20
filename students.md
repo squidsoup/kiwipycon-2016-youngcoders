@@ -4,7 +4,7 @@
 
 # Supporters and Sponsors
 
-Thanks to our awesome supporters and sponsors who have made this content and workshop possible.
+Thanks to our awesome supporters and sponsors who have made Young Coders 2016 possible.
 
 ![](assets/images/gigcity_logo_white.png)
 ![](assets/images/OCTLogo_RGB.jpg)
@@ -161,7 +161,13 @@ You may have noticed that there are two towers in our world. Let's write some co
 
 1. Modify our previous program, to teleport Steve from one place to another.
 
-The code below is *incomplete* - you will need to fill in the blanks where the comments say 'TODO:'. Look for comments in the code, starting with '#' to figure out what you need to fix.
+The code below is *incomplete* - you will need to fill in the blanks where the code is commented. Comments look like:
+
+```python
+# Todo: Add variable and x coordinates for tower_2
+```
+
+Look for comments in the code, starting with '#' to figure out what you need to fix.
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -187,7 +193,11 @@ mc.player.setTilePos(tower_1_x, tower_1_y, tower_1_z)
 ```
 Got it working? Ask a Young Coders helper to review your code!
 
-2. You might have noticed that the last bit of code made Steve teleport around pretty quickly - the poor guy's going to be sick!
+\pagebreak
+
+## Workshop 1, Exercise 2c: Less Nauseating Teleportation Tour
+
+You might have noticed that the last bit of code made Steve teleport around pretty quickly - the poor guy's going to be sick!
 
 ![](assets/images/barf.png)
 
@@ -195,7 +205,7 @@ Let's see if we can make his Teleportation Tour a little more comfortable...
 
 Python has a handy module called `time` which we can import to do all sorts of time related things, including pausing our program!
 
-Add another import statement to the top of your code:
+1. Add another import statement to the top of your code:
 
 ```python
 import time
@@ -203,7 +213,7 @@ import time
 from mcpi.minecraft import Minecraft
 ```
 
-Now use `time.wait()` in your code to pause a few seconds after every time Steve teleports to a new location.
+2. Now use `time.wait()` in your code to pause a few seconds after every time Steve teleports to a new location.
 
 *Hint:* time.wait() is a *function* which takes a number of seconds as it's parameter (similar to how `setTilePos` takes coordinates as parameters).
 
