@@ -111,7 +111,7 @@ mc.postToChat('Hello ' + name + '!')
 You should see yourself greeted in the Minecraft window.
 
 
-Well done, you've completed the first exercise!
+Well done, you've completed the first exercise! Ask a Young Coders helper to review your code and get a stamp!
 
 \pagebreak
 
@@ -152,7 +152,7 @@ Remember, if you want to go back to the start, change x, y and z back to their o
 
 5. Go back to your original coordinates. (-5.4, 12, -14)
 
-6. Try to teleport to the top of the tower on the left. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise
+6. Try to teleport to the top of the tower on the left. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise and receive a stamp.
 
 
 ## Workshop 1, Exercise 2b: Teleportation Tour
