@@ -31,17 +31,21 @@ One of the first programs you usually write, when learning how to program is 'He
 
 1. Make sure your Raspberry Pi is booted up. You should see a desktop with Young Coders wallpaper and a menu button in the top left. If you don't see a desktop, please ask a Young Coders helper for a hand.
 
-2. Open Minecraft Pi, and open the selected world.
+2. Open Minecraft Pi, and click *Start Game*.
 
 ![](assets/images/start-mc.png)
 
+\pagebreak
+
+3. Open the selected world.
+
 ![](assets/images/select-world.png)
 
-3. Open the python editor IDLE.
+4. Open the python editor IDLE.
 
 ![](assets/images/run-idle.png)
 
-4. Type the following code in the new editor window:
+5. Type the following code in the new editor window:
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -50,9 +54,10 @@ mc = Minecraft.create()
 mc.postToChat('Hello World!')
 ```
 
-5. Click *File > Save* and save this file as `helloworld.py`.
+6. Click *File > Save* and save this file as `helloworld.py`.
 
-6. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
+7. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
+
 
 ### Learning about variables
 
@@ -76,6 +81,8 @@ mc.postToChat(message)
 
 You should see the text "Hello Minecraft World!" appear in your Minecraft chat window.
 
+**Hint**: to switch between Minecraft and IDLE windows, you can use *Alt+Tab*.
+
 ### Joining string variables
 
 We can also join strings together to print out messages with several variables.
@@ -91,6 +98,10 @@ mc.postToChat('Hello ' + name + '!')
 ```
 
 2. Click *Run > Run Module* in IDLE to run this program. You should see yourself greeted in the Minecraft window.
+
+**Hint**: A quick way to run your code is the *F5* key.
+
+\pagebreak
 
 ### Asking for input
 
