@@ -1,4 +1,4 @@
-![](assets/images/cover.png)
+![](assets/images/young-coders-cover.png)
 
 \pagebreak
 
@@ -213,9 +213,9 @@ import time
 from mcpi.minecraft import Minecraft
 ```
 
-2. Now use `time.wait()` in your code to pause a few seconds after every time Steve teleports to a new location.
+2. Now use `time.sleep()` in your code to pause a few seconds after every time Steve teleports to a new location.
 
-*Hint:* time.wait() is a *function* which takes a number of seconds as it's parameter (similar to how `setTilePos` takes coordinates as parameters).
+*Hint:* time.sleep() is a *function* which takes a number of seconds as it's parameter (similar to how `setTilePos` takes coordinates as parameters).
 
 Figure it out? Ask a Young Coders helper if you're stuck, or think you've got it working!
 
@@ -363,7 +363,7 @@ A Raspberry Pi is also a bit different from a desktop computer, as it has one ve
 
 ![](assets/images/gpio-pins.jpg)
 
-The GPIO port is the set of 24 pins you see in the picture above. GPIO stands for General-purpose Input Output, and is the way the Raspberry Pi can talk to the outside world, controlling special devices, sensors and other electronic doodads. With GPIO, the raspberry Pi goes from being just a little computer, to the heart and brain of all sorts of amazing inventions. 
+The GPIO port is the set of 24 pins you see in the picture above. GPIO stands for General-purpose Input Output, and is the way the Raspberry Pi can talk to the outside world, controlling special devices, sensors and other electronic doodads. With GPIO, the Raspberry Pi goes from being just a little computer, to the heart and brain of all sorts of amazing inventions. 
 
 ![](assets/images/gpio-numbers.png)
 
@@ -527,7 +527,11 @@ while True:
 7. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
 
 
-Well done - you've completed the Young Coders 2016 workshop. We hope you've learned lots of new things! If you're keen to learn more about electronics and coding, check out some of the resources under *Local Education Resources* on the next page.
+Well done - you've completed the Young Coders 2016 workshop! We hope you've learned lots of new things!
+
+If there's still time left in the workshop, feel free to explore the world (there are some hidden blocks you can look for), or spend some more time experimenting with the coding you've learned today.
+
+If you're keen to learn more about electronics and coding, check out some of the resources under *Local Education Resources* on the next page.
 
 
 \pagebreak
