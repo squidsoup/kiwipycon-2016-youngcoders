@@ -56,7 +56,7 @@ mc = Minecraft.create()
 mc.postToChat('Hello World!')
 ```
 
-6. Click *File > Save* and save this file as `helloworld.py`.
+6. Click *File > Save* and save this file as `helloworld.py`. If you get a dialog box saying the file already exists, you can say *YES* to overwriting the file.
 
 7. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
 
@@ -95,8 +95,9 @@ We can also join strings together to print out messages with several variables.
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
-name = 'Type your name here'
-mc.postToChat('Hello ' + name + '!')
+first_name = 'Type your first name here'
+last_name = 'Type your last name here'
+mc.postToChat('Hello ' + first_name + ' ' + last_name + '!')
 ```
 
 2. Click *Run > Run Module* in IDLE to run this program. You should see yourself greeted in the Minecraft window.
@@ -121,7 +122,7 @@ mc.postToChat('Hello ' + name + '!')
 
 2. Click *Run > Run Module* in IDLE to run this program. Once again, save your file if prompted.
 
-You should see yourself greeted in the Minecraft window.
+Look in the Python Shell window, and you should see your question. Type your name and hit enter. You should see yourself greeted in the Minecraft window.
 
 
 Well done, you've completed the first exercise! Ask a Young Coders helper to review your code and get a stamp!
@@ -132,15 +133,13 @@ Well done, you've completed the first exercise! Ask a Young Coders helper to rev
 
 Now that we know about variables, we can use them to teleport Steve all over the place in style!
 
-In Minecraft Pi, you can see your current position in the world in the top left of the screen.
+In Minecraft Pi, you can see your current position in the world in the top left of the screen starting with the label *pos:*.
 
-XXX: Screenshot showing coordiates in Minecraft Pi.
+Coordinates have 3 parts which we can use to represent a position in 3d space: *x*, *y* and *z*. *x* and *z* are your horizontal position in the world and *y* is your height.
 
-Coordinates have 3 parts which we can use to represent a position in 3d space: x, y and z.
+Let's create variables for *x*, *y* and *z*.
 
-Let's create variables for x, y and z.
-
-1. In IDLE, Select *File > New* to open a new editor window.
+1. In IDLE, Select *File > New File* to open a new editor window.
 
 ![](assets/images/file-new-idle.png)
 
@@ -151,8 +150,8 @@ from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
 x = -5.4
-y = 12.0
-z = -14.4
+y = 14.0
+z = -21.6
 
 mc.player.setTilePos(x, y, z)
 ```
@@ -163,16 +162,20 @@ Remember, if you want to go back to the start, change x, y and z back to their o
 
 4. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
 
-5. Go back to your original coordinates. (-5.4, 12, -14)
+You should see you have teleported a short distance forward, and are now standing closer to the Young Coders sign.
 
-6. Try to teleport to the top of the tower on the left. Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise and receive a stamp.
+5. Change x, y and z back to your original coordinates (x = -5.4, y = 12, z= -14) and re-run your program.
+
+6. Not try to teleport to the top of the tower on the left by guessing the coordinates. Remember if you go in the wrong direction, you can change your coordinates back to reset them. A good way to figure out the coordinates for the tower, is to walk towards it and check the top left hand corner for your coordinates. Once you think you have x and z correct, try to add a bigger value for y which is your height.
+
+Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise and receive a stamp.
 
 
 ## Workshop 1, Exercise 2b: Teleportation Tour
 
 You may have noticed that there are two towers in our world. Let's write some code that let's us teleport from our starting location, to the top of the tower on the left, to the top of the tower on the right, and finally back to the start!
 
-1. Modify our previous program, to teleport Steve from one place to another.
+1. Modify our previous program, to teleport Steve from one place to another. Don't delete your *x* *y* and *z* for the first tower - we can rename them and use them again. (If you do make a mistake and want to undo anything in IDLE you can use CTRL+Z).
 
 The code below is *incomplete* - you will need to fill in the blanks where the code is commented. Comments look like:
 
@@ -180,7 +183,7 @@ The code below is *incomplete* - you will need to fill in the blanks where the c
 # Todo: Add variable and x coordinates for tower_2
 ```
 
-Look for comments in the code, starting with '#' to figure out what you need to fix.
+Look for comments in the code, starting with '#' to figure out what you need to fix. You can run your program to test it at any time (F5) while you work on it. You might want to try to get teleporting from your start position to the top of the first tower working first, and then figure out how to teleport to the second tower afterwards.
 
 ```python
 from mcpi.minecraft import Minecraft
@@ -190,6 +193,8 @@ start_x = -5.4
 start_y = 12.0
 start_z = -14.4
 
+# Hint: since you've already worked out how to get to the top of tower 1,
+# you can just rename your x, y and z to tower_1_x etc.
 tower_1_x = 0 # Todo: Add x coordinates for tower_1
 tower_1_y = 0 # Todo: Add y coordinates for tower_1
 tower_1_z = 0 # Todo: Add z coordinates for tower_1
@@ -242,7 +247,7 @@ In Minecraft, every block type, from diamond to cactus, has a *block id*. (*Lear
 
 Let's make a program that creates a cobblestone block at Steve's location.
 
-1. In IDLE, select *File > New* to open a new editor window.
+1. In IDLE, select *File > New File* to open a new editor window.
 
 2. Type the following code in the new editor window:
 
@@ -264,6 +269,8 @@ mc.setBlock(x, y, z, block_id)
 4. Click *Run > Run Module* in IDLE to run your program.
 
 5. Experiment with changing the value of `block_id` and see what other types of blocks you can create.
+
+\pagebreak
 
 ## Workshop 1, Exercise 3b: Blockstacking
 
@@ -301,11 +308,11 @@ Let's improve our block creating program, so that it asks for user input. We've 
 
 ### Learning about Strings and Integers
 
-First let's see what happens when we try to add numbers together as strings in the IDLE shell. The IDLE shell is a handy tool that will run the python code you type after you hit *enter*. It isn't a great way to write long programs, but it can be very handy for learning and exploring.
+First let's see what happens when we try to add integers together as strings in the IDLE shell. The IDLE shell is the handy tool you used before to answer your input question. Any code you add after the `>>>` prompt will run after you hit *enter*. It isn't a great way to write long programs, but it can be very handy for learning and exploring.
 
 1. Find the IDLE shell window. It will have a prompt starting with `>>>`.
 
-2. Let's try adding some numbers together as strings:
+2. Let's try adding some integers together as strings:
 
 `>>> '1' + '2'`
 
@@ -319,9 +326,11 @@ You can also of course type:
 
 `>>> 1 + 2`
 
+\pagebreak
+
 ### Updating our Block program to use input() and int()
 
-1. In IDLE, Select *File > New* to open a new editor window.
+1. In IDLE, Select *File > New File* to open a new editor window.
 
 The program below is incomplete, and you'll need to fix the bits that say `# TODO:`!
 
@@ -340,6 +349,10 @@ y = pos.y
 z = pos.z
 mc.setBlock(x, y, z, block_id)
 ```
+
+3. Click *File > Save* and save this file as `blocks_plus.py`.
+
+4. Click *Run > Run Module* in IDLE to run your program.
 
 Does your program work? Ask a helper to check your code.
 
@@ -428,11 +441,17 @@ While we're making our circuit, it's important that the Raspberry Pi is switched
 ![](assets/images/power-restart.jpg)
 \pagebreak
 
-3. Wiring up our test circuit
+3. Wire up a test circuit
 
-Our first circuit is going to test that our components are working correctly and we have our circuit wired up the right way. 
+Our first circuit is going to test that our components are working correctly and we have our circuit wired up the right way. Follow the diagram below to setup your components correctly.
+
+The *female* (the end with a slot) end of your jumpers will connect to the pins on the GPIO port, and the *male* (the end with the pin) end will connect to the breadboard.
+
+Make sure the long leg of the LED is connected to the first row on the breadborad.
 
 ![](assets/images/led-test_bb.png)
+
+Remember, if you get stuck or need some help, raise your hand and talk to a Young Coders helper.
 
 4. Turn your Pi back on by reconnecting the power.
 
@@ -456,7 +475,7 @@ This will allow us to turn our circuit on and off with code.
 
 ![](assets/images/run-idle.png)
 
-4. Select *File > New* to open a new editor window.
+4. Select *File > New File* to open a new editor window.
 
 ![](assets/images/file-new-idle.png)
 
@@ -503,7 +522,7 @@ Now we're going to make a slightly more complicated program that can turn our LE
 
 ![](assets/images/create-door.png)
 
-3. Select *File > New* in IDLE to open a new editor window.
+3. Select *File > New File* in IDLE to open a new editor window.
 
 4. Type in the following code:
 
