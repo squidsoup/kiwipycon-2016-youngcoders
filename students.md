@@ -45,6 +45,8 @@ One of the first programs you usually write, when learning how to program is 'He
 
 ![](assets/images/run-idle.png)
 
+**Note**: To get your desktop cursor back from Minecraft, hit the ESC key.
+
 5. Type the following code in the new editor window:
 
 ```python
