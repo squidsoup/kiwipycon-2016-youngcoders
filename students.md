@@ -178,7 +178,7 @@ Once you have reached the top of the tower, you'll find a secret message. Whispe
 
 You may have noticed that there are two towers in our world. Let's write some code that let's us teleport from our starting location, to the top of the tower on the left, to the top of the tower on the right, and finally back to the start!
 
-1. Modify our previous program, to teleport Steve from one place to another. Don't delete your *x* *y* and *z* for the first tower - we can rename them and use them again. (If you do make a mistake and want to undo anything in IDLE you can use CTRL+Z).
+1. Modify our previous program, to teleport Steve from one place to another. Don't delete your *x* *y* and *z* for the first tower - we can rename and use them again. (If you do make a mistake and want to undo anything in IDLE you can use CTRL+Z).
 
 The code below is *incomplete* - you will need to fill in the blanks where the code is commented. Comments look like:
 
@@ -186,7 +186,11 @@ The code below is *incomplete* - you will need to fill in the blanks where the c
 # Todo: Add variable and x coordinates for tower_2
 ```
 
-Look for comments in the code, starting with '#' to figure out what you need to fix. You can run your program to test it at any time (F5) while you work on it. You might want to try to get teleporting from your start position to the top of the first tower working first, and then figure out how to teleport to the second tower afterwards.
+Look for comments in the code, starting with '#' to figure out what you need to fix. You can run your program to test it at any time (F5) while you work on it.
+
+First work out teleporting from your start position to the top of the first tower. Next, figure out how to teleport to the second tower. Finally, finish your program off by teleporting *back* to your start position.
+
+**Hint**: To work out the rough coordinates for the towers, you can walk up to them and have a look at your coordinates in the world on the top left of your screen. You'll have to adjust your `y` value quite a bit though to make sure you get to the top of the towers!
 
 ```python
 from mcpi.minecraft import Minecraft
