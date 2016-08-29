@@ -56,7 +56,9 @@ mc = Minecraft.create()
 mc.postToChat('Hello World!')
 ```
 
-6. Click *File > Save* and save this file as `helloworld.py`. If you get a dialog box saying the file already exists, you can say *YES* to overwriting the file.
+6. Click *File > Save* and save this file as `helloworld.py`
+
+If you get a dialog box saying the file already exists, you can say *YES* to overwriting the file.
 
 7. Click *Run > Run Module* in IDLE to run this program. You should see the text "Hello World!" appear in your Minecraft chat window.
 
@@ -158,7 +160,7 @@ mc.player.setTilePos(x, y, z)
 
 Remember, if you want to go back to the start, change x, y and z back to their original values.
 
-3. Click *File > Save* and save this file as `teleport.py`.
+3. Click *File > Save* and save this file as `teleport.py`
 
 4. Click *Run > Run Module* in IDLE to run this program. You should see Steve teleported to a new location.
 
@@ -264,7 +266,7 @@ z = pos.z
 mc.setBlock(x, y, z, block_id)
 ```
 
-3. Click *File > Save* and save this file as `blocks.py`.
+3. Click *File > Save* and save this file as `blocks.py`
 
 4. Click *Run > Run Module* in IDLE to run your program.
 
@@ -350,7 +352,7 @@ z = pos.z
 mc.setBlock(x, y, z, block_id)
 ```
 
-3. Click *File > Save* and save this file as `blocks_plus.py`.
+3. Click *File > Save* and save this file as `blocks_plus.py`
 
 4. Click *Run > Run Module* in IDLE to run your program.
 
@@ -490,7 +492,7 @@ GPIO.setup(7, GPIO.OUT)
 GPIO.output(7,True)
 ```
 
-6. Click *File > Save* and save this file as `led.py`.
+6. Click *File > Save* and save this file as `led.py`
 
 7. Click *Run > Run Module* in IDLE to run this program. You should see the LED turn on.
 
@@ -552,7 +554,7 @@ while True:
         time.sleep(1)
 ```
 
-5. Click *File > Save* and save this file as `ledminecraft.py`.
+5. Click *File > Save* and save this file as `ledminecraft.py`
 
 6. Click *Run > Run Module* in IDLE to run this program.
 
