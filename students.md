@@ -135,11 +135,11 @@ Well done, you've completed the first exercise! Ask a Young Coders helper to rev
 
 Now that we know about variables, we can use them to teleport Steve all over the place in style!
 
-In Minecraft Pi, you can see your current position in the world in the top left of the screen starting with the label *pos:*.
+In Minecraft Pi, you can see your current position in the world in the top left of the screen starting with the label `pos:`
 
-Coordinates have 3 parts which we can use to represent a position in 3d space: *x*, *y* and *z*. *x* and *z* are your horizontal position in the world and *y* is your height.
+Coordinates have 3 parts which we can use to represent a position in 3d space: `x`, `y` and `z`. `x` and `z` are your horizontal position in the world and `y` is your height.
 
-Let's create variables for *x*, *y* and *z*.
+Let's create variables for `x`, `y` and `z`.
 
 1. In IDLE, Select *File > New File* to open a new editor window.
 
