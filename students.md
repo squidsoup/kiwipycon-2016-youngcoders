@@ -556,12 +556,13 @@ while True:
 
 6. Click *Run > Run Module* in IDLE to run this program.
 
-7. In Minecraft, hit the door you made earlier with a sword and you should see the LED turn on. Hit the door again, and the LED should turn off!
+7. In Minecraft, right click the door you made earlier with a sword equiped and you should see the LED turn on. Hit the door again, and the LED should turn off!
 
+Got it working? Ask a young coders helper to check your work, and receive your final stamp!
 
 Well done - you've completed the Young Coders 2016 workshop! We hope you've learned lots of new things!
 
-If there's still time left in the workshop, feel free to explore the world (there are some hidden blocks you can look for), or spend some more time experimenting with the coding you've learned today.
+If there's still time left in the workshop, feel free to explore the world (there are some hidden coloured and metal blocks you can look for), or spend some more time experimenting with the coding you've learned today.
 
 If you're keen to learn more about electronics and coding, check out some of the resources under *Local Education Resources* on the next page.
 
