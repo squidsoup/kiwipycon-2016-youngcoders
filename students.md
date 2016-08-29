@@ -172,6 +172,7 @@ You should see you have teleported a short distance forward, and are now standin
 
 Once you have reached the top of the tower, you'll find a secret message. Whisper the secret message to a Young Coders helper, to complete the exercise and receive a stamp.
 
+\pagebreak
 
 ## Workshop 1, Exercise 2b: Teleportation Tour
 
